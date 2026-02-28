@@ -22,7 +22,13 @@ ifeq ($(CURRENT_DIR), 02_ft_printf)
 	endif
 endif
 
-all: $(NAME) bonus $(EXTRA)
+ifeq ($(UPDATE_PERSO), prunelle)
+ifeq ($(CURRENT_DIR), 02_ft_printf)
+		EXTRA := install
+	endif
+endif
+
+all: $(NAME) $(EXTRA)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
